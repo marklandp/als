@@ -3,13 +3,25 @@
 <title>Lock System</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps+Tangerine+Mate+SC" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps+Tangerine+Mate+SC+Lato" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+
 <style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-.mySlides {display:none}
+html,body,h1,h2,h3,h4 {font-family:"Roboto", sans-serif}
+
+body{
+  background-image: url("Screenshots/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.mySlides {display:none;}
+
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 /* The dots/bullets/indicators */
@@ -43,6 +55,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   to {opacity: 1}
 }
 
+#head {
+  font-size: 3vw;
+}
+
+#pdf-view {
+  max-width: 512px;
+  max-height: 100%; 
+  overflow: hidden;
+}
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -51,40 +73,56 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <body>
 
 <!-- Links (sit on top) -->
-<div class="w3-bar w3-top w3-card-4 w3-light-grey w3-border w3-xlarge">
-  <a href="#" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-home"></i></a>
-  <a href="#plans" class="w3-bar-item w3-button w3-hover-blue">Plans</a>
-  <a href="#about" class="w3-bar-item w3-button w3-hover-blue">About</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-hover-blue">Contact</a>
+<div style="position: fixed; top: 0px; z-index: 5;width: 100%;">
+<h3 id="head" class="w3-center" style="background: url(Screenshots/nav.jpeg) left top repeat-x; color: white; width: 100%; margin: 0px;"><strong>Automatic Lock System</strong></h3>
+<div class="w3-bar w3-black" style=" display: flex; justify-content: center;">
+
+  <a onclick="$('#home').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+  <a onclick="$('#synopsis').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#synopsis" class="w3-bar-item w3-button w3-hide-small">Synopsis</a>
+  <a onclick="$('#team').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#team" class="w3-bar-item w3-button w3-hide-small">Team</a>
+  <a onclick="$('#details').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#details" class="w3-bar-item w3-button w3-hide-small">Project Details</a>
+  <a class="open_fancybox w3-bar-item w3-button w3-hide-small">View Gallery</a>
+  <a class="variou w3-bar-item w3-button w3-hide-small" data-fancybox-type="iframe" href="FinalDocumentation.pdf">View Documentation</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="mm" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-center">
+  <a onclick="$('#synopsis').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#synopsis" class="w3-bar-item w3-button">Synopsis</a>
+  <a onclick="$('#team').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#team" class="w3-bar-item w3-button">Team</a>
+  <a onclick="$('#details').animatescroll({scrollSpeed:2000,easing:'easeOutBack'});" href="#details" class="w3-bar-item w3-button">Project Details</a>
+  <a class="open_fancybox w3-bar-item w3-button">View Gallery</a>
+  <a class="variou w3-bar-item w3-button" data-fancybox-type="iframe" href="FinalDocumentation.pdf">View Documentation</a>
+</div>
 </div>
 
 <!-- Content -->
-<div class="w3-content" style="max-width:1100px;margin-top:30px;margin-bottom:30px">
-
-  <div class="w3-panel">
-    <h1><b style="margin-bottom: 5px;text-shadow: 4px 4px 4px #aaa;font-size:5vw;">Automatic Lock System</b></h1>
-    <p style="font-size: 2vw; margin: 0px;">Group 4</p>
-  </div>
+<div id="home" class="w3-content" style="max-width:1100px;margin-top:30px;margin-bottom:30px">
 
   <!-- Slideshow -->
-  <div class="w3-container">
+  
+  <div class="w3-container" style="padding-top: 115px;">
+  <div style="max-width: 750px; margin: 0 auto;">
     <div class="w3-display-container mySlides fade">
-      <img src="ScreenShots/Scan_Barcode_Accept_or_Deny.png" style="width:100%;height:600px;">
-      <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" style="font-size: 3vw;">Reliability, Security and Speed</span>
+      <img src="ScreenShots/DSC_0021.JPG" style="width: 100%;">
+    </div>
+    <div class="w3-display-container mySlides fade">
+      <img src="ScreenShots/ID-Scanned.png" style="width: 100%;">
+      <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+        Reliability, Security and Speed
       </div>
     </div>
     <div class="w3-display-container mySlides fade">
-      <img src="ScreenShots/Edit_Student.png" style="width:100%;height:600px;">
-      <div class="w3-display-middle w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" style="font-size: 3vw;">Intuitive User Interface</span>
+      <img src="ScreenShots/Edit_Student.png" style="width: 100%;">
+      <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+        Intuitive User Interface
       </div>
     </div>
     <div class="w3-display-container mySlides fade">
-      <img src="ScreenShots/Untitled.png" style="width:100%;height:600px;">
-      <div class="w3-display-topright w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" style="font-size: 3vw;">Accountabililty</span>
+      <img src="ScreenShots/Untitled.png" style="width: 100%;">
+      <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+        Accountabililty
       </div>
+    </div>
     </div>
 
     <!-- Slideshow next/previous buttons -->
@@ -92,11 +130,12 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <span class="dot"></span> 
       <span class="dot"></span> 
       <span class="dot"></span> 
+      <span class="dot"></span> 
     </div>
   </div>
 
   <!-- Grid -->
-  <div class="w3-row w3-container">
+  <div id="synopsis" class="w3-row w3-container">
     <div class="w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Project Synopsis</span>
     </div>
@@ -112,69 +151,208 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16 synopsis">
       <h3>Progress</h3>
-      <li>Scan IDs without the need for special cards being given to students</li>
-      <li>Visitor logs are viewable by security officer</li>
-      <li>Automatically scan ID without interaction from security guard</li>
+      <p>Scan IDs without the need for special cards being given to students</p>
+      <p>Automatically scan ID without interaction from security guard</p>
+      <a class="various" style="float: right;" href="#progress-more">More Info</a>
     </div>
 
     <div class="w3-col l3 m6 w3-black w3-container w3-padding-16 synopsis">
       <h3>To Do</h3>
       <p>Implement facial recognition</p>
+      <p>Implement location-based authentication</p>
+      <p>Opening a physical lock</p>
+      <p>Facilitating exit logs</p>
     </div>
   </div>
 
  
   <!-- Grid -->
-  <div class="w3-row-padding" id="about">
+  <div class="w3-row-padding" id="team">
     <div class="w3-center w3-padding-64">
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
     </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="https://scontent.fkin2-1.fna.fbcdn.net/v/t1.0-9/1392615_874248062589311_1588414813166654168_n.jpg?oh=0788e7b30d0ce236c565d88bb0d086b1&oe=59B41538" alt="Samath" style="width:100%">
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-card-4 w3-highway-blue">
+        <img src="ScreenShots/samath.jpeg" alt="Samath Scott" style="width:100%">
         <div class="w3-container">
           <h3>Samath Scott</h3>
         </div>
       </div>
     </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-card-4 w3-pink">
+        <img src="ScreenShots/jevoi.jpeg" alt="Jevoi Harvey" style="width:100%">
         <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Art Director</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+          <h3>Jevoi Harvey</h3>
         </div>
       </div>
     </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <img src="/w3images/team3.jpg" alt="Jane" style="width:100%">
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-card-4 w3-highway-red">
+        <img src="ScreenShots/andrew.jpeg" alt="Andrew Philp" style="width:100%">
         <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+          <h3>Andrew Philp</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-quarter w3-margin-bottom">
+      <div class="w3-card-4 w3-black">
+        <img src="ScreenShots/markland.jpeg" alt="Markland Payne" style="width:100%">
+        <div class="w3-container">
+          <h3>Markland Payne</h3>
         </div>
       </div>
     </div>
   </div>
 
+<!-- Grid -->
+  <div id="details" class="w3-row w3-container ">
+    <div class="w3-center w3-padding-64 ">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Project Details</span>
+    </div>
+    <div class="w3-row-padding w3-card-4 w3-teal">
+      <p>What we have done is to use relatively simple and cheap equipment to create a secure way for students to easily gain access to Halls of Residence and for administration personnel to, at a glance, be able to keep track of students and visitors. By keeping track we do not mean on a granular level, but just whether or not the student or visitor is on/off hall or whether a visitor has stayed past the 1 AM cut off time for visitors to be on hall.</p>
+      <p>The hardware we have used is inexpensive and easily obtainable, These are:
+      <ul>
+        <li>USB Webcam(any)</li>
+        <li>Raspberry Pi</li>
+        <li>Breadboard</li>
+        <li>LED Light</li>
+        <li>Desktop/Laptop Computer with Windows OS</li>
+      </ul>
+      All that is required is an ID card with a barcode. No need to have hid capable cards (cards with electronic chips). So a student can even use their driver's licence to gain access to the hall, as long as the licence was previously registered under their name. 
+      </p>
+      <a class="open_fancybox"><button class="w3-btn w3-ripple w3-blue">View Gallery</button></a>
+      <a class="variou" data-fancybox-type="iframe" href="FinalDocumentation.pdf"><button class="w3-btn w3-ripple w3-blue">View Documentation</button></a>
+      <p style="margin:0px;">&nbsp;</p>
+    </div>
+  </div>
+
+</div>
+<div id="progress-more" style="display: none;">
+  <p>Listed are the tasks that were accomplished:
+    <br />➢ Implemented the barcode reader.
+    <br />➢ Created and designed the desktop interface and database.
+    <br />➢ Programmed the Raspberry Pi.
+    <br />➢ Created the mobile application.
+    <br />➢ Kept logs of entrants.
+    <br />➢ Integrated the desktop application, the server, the mobile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application, the Raspberry PI, the Breadboard and the LED &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lights to open a lock.
+    <br />➢ Created an interface to allow future implementation of &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;facial recognition.</p>  
 </div>
 
 <!-- Footer -->
 
 <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-  <h4>Footer</h4>
+  <h4>&copy; COMP3901: Group 4 Capstone 2017</h4>
   <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 </footer>
 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script src="animatescroll.min.js"></script>
 <script>
+$(document).ready(function() {
+  $(".various").fancybox({
+    maxWidth  : 400,
+    openEffect  : 'elastic',
+    closeEffect : 'elastic'
+  });
+});
+
+$(document).ready(function() {
+  $(".variou").fancybox({
+    maxWidth  : 800,
+    maxHeight : 1000,
+    fitToView : false,
+    width   : '75%',
+    height    : '85%',
+    autoSize  : false,
+    closeClick  : false,
+    openEffect  : 'elastic',
+    closeEffect : 'elastic'
+  });
+});
+
+$(".open_fancybox").click(function() {
+    
+    $.fancybox.open([
+        {
+            href : 'Screenshots/AdminDash.png',                
+            title : 'Admin Dashboard'
+        },
+        {
+            href : 'Screenshots/AddSecurity.png',                
+            title : 'Add Security'
+        },
+        {
+            href : 'Screenshots/AddStudent.png',                
+            title : 'Add Student'
+        },
+        {
+            href : 'Screenshots/ID-Scanned.png',                
+            title : 'Successfully scanned ID'
+        },
+        {
+            href : 'Screenshots/Login.png',                
+            title : 'Admin Login'
+        },
+        {
+            href : 'Screenshots/LoginSecurity.png',                
+            title : 'Security Login'
+        },
+        {
+            href : 'Screenshots/SignOutExpired.png',                
+            title : 'This pop-up is displayed at the 1 AM cut off time for visitors'
+        },
+        {
+            href : 'Screenshots/studentBarcodeScan.png',                
+            title : 'Add Student'
+        },
+        {
+            href : 'Screenshots/BanStudent.png',                
+            title : 'Ban Student Interface'
+        },
+        {
+            href : 'Screenshots/RemoveBan.png',                
+            title : 'Remove Ban Student Interface'
+        },
+        {
+            href : 'Screenshots/DeleteStudent.png',                
+            title : 'Delete Student Interface'
+        },
+        {
+            href : 'Screenshots/signInGuest.png',                
+            title : 'Sign in visitors'
+        },
+        {
+            href : 'Screenshots/DSC_0017.JPG',                
+            title : 'Hardware setup'
+        },
+        {
+            href : 'Screenshots/DSC_0020.JPG',                
+            title : 'Hardware setup'
+        },
+        {
+            href : 'Screenshots/DSC_0021.JPG',                
+            title : 'On successful scan, LED lights up'
+        },
+        {
+            href : 'Screenshots/DSC_0023.JPG',                
+            title : 'Raspberry Pi we used'
+        },
+    ], {
+        padding : 0,
+        openEffect  : 'elastic',
+        closeEffect : 'elastic'
+    });
+    
+    return false;
+    
+});
 var slideIndex = 0;
 showSlides();
 
@@ -193,6 +371,15 @@ function showSlides() {
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+function myFunction() {
+    var x = document.getElementById("mm");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
 }
 </script>
 
