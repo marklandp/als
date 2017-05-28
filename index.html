@@ -47,7 +47,7 @@ body{
 }
 
 .synopsis{
-	height: 250px;
+	height: 280px;
 }
 
 @-webkit-keyframes fade {
@@ -101,7 +101,7 @@ body{
   <!-- Slideshow -->
   
   <div class="w3-container" style="padding-top: 115px;">
-  <div style="max-width: 750px; margin: 0 auto;">
+  <div style="max-width: 750px; margin: 0 auto; position: relative;">
     <div class="w3-display-container mySlides fade">
       <img src="Screenshots/DSC_0021.JPG" style="width: 100%;">
     </div>
@@ -142,17 +142,20 @@ body{
     <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16 synopsis">
       <h3>Problem</h3>
       <p>Need to implement better security on halls of residences. Allow residents to easily access hall through main gate. Security personnel can allow vistors on hall and be alerted if the visitor hasn't signed out after 1 A.M.</p>
+      <a class="variou" data-fancybox-type="iframe" href="FinalDocumentation.pdf#page=4" style="float: right;">More Info</a>
     </div>
 
     <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16 synopsis">
       <h3>Solution</h3>
       <p>An automated lock system that uses student IDs. Gives students quick access to enter/exit main gate, allow security personnel to keep track of how many persons are on hall. Alertssecurity of visitors who haven't signed out arter 1 A.M.</p>
+      <a class="variou" style="float: right;" data-fancybox-type="iframe" href="FinalDocumentation.pdf#page=7">More Info</a>
     </div>
 
     <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16 synopsis">
       <h3>Progress</h3>
       <p>Scan IDs without the need for special cards being given to students</p>
       <p>Automatically scan ID without interaction from security guard</p>
+      <p style="margin-bottom: 8px;">&nbsp;</p>
       <a class="various" style="float: right;" href="#progress-more">More Info</a>
     </div>
 
@@ -162,6 +165,7 @@ body{
       <p>Implement location-based authentication</p>
       <p>Opening a physical lock</p>
       <p>Facilitating exit logs</p>
+      <a class="variou" style="float: right;" data-fancybox-type="iframe" href="FinalDocumentation.pdf#page=9">More Info</a>
     </div>
   </div>
 
@@ -381,6 +385,7 @@ function myFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
 </script>
 
 </body>
